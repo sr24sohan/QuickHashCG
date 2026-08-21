@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E07C2CF6-CA2A-49F0-AB6C-F282D953A77A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="QCheckify.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="QGenify.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ShellExtHelper.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="QCheckifier.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="QCheckify">
+        <MSBuild Projects="QCheckify.dproj"/>
+    </Target>
+    <Target Name="QCheckify:Clean">
+        <MSBuild Projects="QCheckify.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QCheckify:Make">
+        <MSBuild Projects="QCheckify.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QGenify">
+        <MSBuild Projects="QGenify.dproj"/>
+    </Target>
+    <Target Name="QGenify:Clean">
+        <MSBuild Projects="QGenify.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QGenify:Make">
+        <MSBuild Projects="QGenify.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ShellExtHelper">
+        <MSBuild Projects="ShellExtHelper.dproj"/>
+    </Target>
+    <Target Name="ShellExtHelper:Clean">
+        <MSBuild Projects="ShellExtHelper.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ShellExtHelper:Make">
+        <MSBuild Projects="ShellExtHelper.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QCheckifier">
+        <MSBuild Projects="QCheckifier.dproj"/>
+    </Target>
+    <Target Name="QCheckifier:Clean">
+        <MSBuild Projects="QCheckifier.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QCheckifier:Make">
+        <MSBuild Projects="QCheckifier.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="QCheckify;QGenify;ShellExtHelper;QCheckifier"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="QCheckify:Clean;QGenify:Clean;ShellExtHelper:Clean;QCheckifier:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="QCheckify:Make;QGenify:Make;ShellExtHelper:Make;QCheckifier:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
