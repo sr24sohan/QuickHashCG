@@ -7,9 +7,9 @@ A lightweight and modern file hashing and checksum verification suite for genera
 Hash Genify is a file hashing utility designed to generate and manage checksums quickly and reliably.
 
 <p align="center">
-  <img src="image1787232079.jpg" width="32%" />
-  <img src="image1787232083.jpg" width="32%" />
-  <img src="image1787232085.jpg" width="32%" />
+  <img src="Screenshots\image1787232079.jpg" width="32%" />
+  <img src="Screenshots\image1787232083.jpg" width="32%" />
+  <img src="Screenshots\image1787232085.jpg" width="32%" />
 </p>
 
 ### Features
